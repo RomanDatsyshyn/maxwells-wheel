@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/Chart.bundle.min.js"></script>
+    <link href="css/css.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="script.js"></script>
+    <script src="sin.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div style="width: 70%;float: left">
+        <canvas id="myChart" style="width: 100%;"></canvas>
+        <div class="form">
+          <label for="m"><b>m ( КГ )</b></label
+          ><br />
+          <input type="text" id="m" value="0.5" />
+          <br /><label for="r0"><b>r0 ( М )</b></label
+          ><br />
+          <input type="text" id="r0" value="0.01" />
+          <br /><label for="R"><b>R ( М )</b></label
+          ><br />
+          <input type="text" id="R" value="0.1" />
+          <br /><label for="h"><b>h ( М )</b></label
+          ><br />
+          <input type="text" id="h" value="0.5" />
+          <button type="button" onclick="start();">
+            Ввести значення
+          </button>
+        </div>
+        <div id="math">
+          <div id="math_inner">
+            <h3><b>I = 1/2m * r0*r0 + 1/2m * (R*R + r0*r0) = </b>0.00255000</h3>
+            <br />
+            <h3><b>a = (m * r0 * r0 * g) / I = </b>0.19216</h3>
+            <br />
+            <h3><b>T = (2 / r0) * &radic;(h * I) / mg = </b>3.22617</h3>
+            <br />
+            <h3><b>Fн = 2 * а = </b>4.80392</h3>
+            <br />
+            <h3><b>ω = 2π / T = </b>1.94757</h3>
+            <br />
+            <h3><b>ψ = ω * r0 = </b>0.01948</h3>
+            <br />
+            <h3><b>Δ p = 2 * m * ψ = </b>0.01948</h3>
+            <br />
+            <h3><b>Δ t = (π * r0) / ψ = </b>1.61308</h3>
+            <br />
+            <h3><b>F = Δ p / Δ t = </b>0.01207</h3>
+          </div>
+        </div>
+      </div>
+      <div class="maxwell">
+        <span class="string"></span>
+        <span class="yo-yo"></span>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+:root {
+  --length-string: -130px;
+  --length-yo-yo: 120px;
+  --time: 1.61s;
+  --yo-yo-size: 70px;
+  --yo-yo-stick: 3px;
+  --string-left: 28px;
+}
+
+body {
+  font-family: "PT Serif", serif;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form {
+  width: 30%;
+  float: left;
+}
+
+input[type="text"] {
+  padding: 5px;
+  border: 2px solid darkgray;
+  height: 30px;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+label {
+  font-size: 18px;
+}
+
+button {
+  width: 100%;
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  margin-left: 5px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#math {
+  width: 70%;
+  float: left;
+}
+#math_inner {
+  margin-top: 5px;
+  margin-left: 40px;
+}
+
+h3 {
+  margin: 0;
+  font-weight: normal;
+}
+
+.maxwell {
+  width: 30%;
+  float: right;
+  position: relative;
+  padding-top: 30px;
+}
+span {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+}
+.string {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  margin-left: 40%;
+  left: var(--string-left);
+  border: 2px solid #222;
+}
+.string:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 4px;
+  bottom: -50px;
+  left: 4px;
+  background: #222;
+  animation: string var(--time) infinite alternate;
+}
+.yo-yo {
+  width: var(--yo-yo-size);
+  height: var(--yo-yo-size);
+  margin-left: 40%;
+  background: radial-gradient(
+    #9295bd var(--yo-yo-stick),
+    #000 var(--yo-yo-stick),
+    #000 100%
+  );
+  animation: yo-yo var(--time) infinite alternate;
+}
+.yo-yo:after {
+  content: "";
+  position: absolute;
+  top: 49%;
+  right: 75%;
+  bottom: 49%;
+  left: 5%;
+  background: #ccc;
+  border-radius: 50%;
+}
+.yo-yo:before {
+  content: "";
+  position: absolute;
+  top: 49%;
+  right: 5%;
+  bottom: 49%;
+  left: 75%;
+  background: #ccc;
+  border-radius: 50%;
+}
+@keyframes string {
+  from {
+    bottom: -50px;
+  }
+  to {
+    bottom: var(--length-string);
+  }
+}
+@keyframes yo-yo {
+  from {
+    -webkit-transform: rotate(-0deg);
+    transform: rotate(-0deg);
+    top: 10px;
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    top: var(--length-yo-yo);
+  }
+}
